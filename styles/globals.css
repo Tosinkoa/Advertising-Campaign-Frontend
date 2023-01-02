@@ -38,7 +38,7 @@
   @apply font-bold text-3xl md:text-5xl;
 }
 .left_right_pic_bg {
-  @apply px-8 row-start-1 md:col-start-2;
+  @apply px-8 row-start-1 md:col-start-2 -mt-20 md:mt-0;
 }
 .grid_pic {
   @apply relative h-[55vh]  w-[10/12] lg:w-[w-7/12] flex mx-auto rounded-md;
