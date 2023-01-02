@@ -5,14 +5,8 @@ import Link from "next/link"
 import { MdWbSunny } from "react-icons/md"
 import { BsMoonStarsFill } from "react-icons/bs"
 import { useEffect, useState } from "react"
-import { useTheme } from "next-themes"
+
 const Navbar = () => {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return null
-
   return (
     <div className="fixed text-white z-20 ">
       <div className="flex w-full mx-auto px-2 lg:px-8">
