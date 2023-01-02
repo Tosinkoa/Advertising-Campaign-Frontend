@@ -4,7 +4,7 @@ export const campaignApi = fetcherApi.injectEndpoints({
   endpoints(build) {
     return {
       createCampaign: build.mutation({
-        query: (body) => ({ url: "create-campaign", method: "post", body }),
+        query: (body) => ({ url: "/create-campaign", method: "post", body }),
         invalidatesTags: ["ForCampaign"],
       }),
       updateCampaign: build.mutation({
