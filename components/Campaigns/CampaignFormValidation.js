@@ -1,5 +1,6 @@
 import * as Yup from "yup"
 
+// This function validate campaign form inputs
 export const validation = Yup.object().shape({
   name: Yup.string()
     .required("Name is required")

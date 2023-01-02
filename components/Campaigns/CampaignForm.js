@@ -15,24 +15,20 @@ import { validation } from "./CampaignFormValidation"
 
 const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) => {
   const { name, from_date, to_date, total_budget, daily_budget, creative_upload } = theCampaign
-  const [
-    createCampaign,
-    { isLoading: createCampaignIsLoading, isError: createCampaignError, isSuccess: createCampaignSuccess },
-  ] = useCreateCampaignMutation()
-  const [
-    updateCampaign,
-    { isLoading: updateCampaignIsLoading, isError: updateCampaignError, isSuccess: updateCampaignSuccess },
-  ] = useUpdateCampaignMutation()
+  const [createCampaign, { isLoading: createCampaignIsLoading }] = useCreateCampaignMutation()
+  const [updateCampaign, { isLoading: updateCampaignIsLoading }] = useUpdateCampaignMutation()
   const [campaignImage, setCampaignImage] = useState("")
   const [campaignImageURL, setCampaignImageURL] = useState(creative_upload)
   const [previewButtonClicked, setPreviewButtonClicked] = useState(false)
   const router = useRouter()
   const dispatch = useDispatch()
 
+  // Make a valid src url for diplaying the current selected image to upload to the backend
   useEffect(() => {
     if (campaignImage) setCampaignImageURL(URL.createObjectURL(campaignImage))
   }, [campaignImage])
 
+  // Initial state of all form inputs
   const initialValues = {
     name,
     from_date: dayjs(from_date).format("YYYY-MM-DD"),
@@ -42,6 +38,8 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
     creative_upload,
   }
 
+  // If newCampaign is true, make request to the server to create new campaign
+  // Else,  make request to the server update the selected campaign
   const submitFormToMakeRequest = async (values) => {
     const { daily_budget, from_date, name, to_date, total_budget } = values
     if (!campaignImage && !campaignImageURL) return toast.warning("You need to add an image to continue!")
@@ -65,6 +63,7 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
     }
   }
 
+  // Preview handler for showing the current campaign user is working on
   const previewCampaignHandler = (values) => {
     const { daily_budget, from_date, name, to_date, total_budget } = values
     if (!previewButtonClicked) return
@@ -157,8 +156,7 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
                   Preview
                 </button>
                 <button type="submit" disabled={createCampaignIsLoading} className="campaign_form_submit_button">
-                  {(createCampaignIsLoading || updateCampaignIsLoading) &&
-                  (!createCampaignError || !createCampaignSuccess) ? (
+                  {createCampaignIsLoading || updateCampaignIsLoading ? (
                     <div className="submit_button_spinner"></div>
                   ) : (
                     "Submit"
