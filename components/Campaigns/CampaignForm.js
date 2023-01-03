@@ -2,7 +2,6 @@ import { Form, Formik } from "formik"
 import MyInput from "../--Utils/Formik"
 import { FaImages } from "react-icons/fa"
 import { useRouter } from "next/router"
-import PreviewComponent from "./PreviewComponent"
 import { useDispatch } from "react-redux"
 import { previewCampaignActions } from "@/store/slices/preview-campaign-slice"
 import { useEffect, useState } from "react"
@@ -114,10 +113,22 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
               />
               <div className="flex justify-between w-fit ">
                 <div className="flex-col mr-2 ">
-                  <MyInput className=" campaign_form_form_input " type="date" name="from_date" label="From" />
+                  <MyInput
+                    className=" campaign_form_form_input "
+                    type="date"
+                    placeholder="mm/dd/yyy"
+                    name="from_date"
+                    label="From"
+                  />
                 </div>
                 <div className="flex-col ml-2">
-                  <MyInput className="campaign_form_form_input " type="date" name="to_date" label="To" />
+                  <MyInput
+                    className="campaign_form_form_input "
+                    type="date"
+                    placeholder="mm/dd/yyy"
+                    name="to_date"
+                    label="To"
+                  />
                 </div>
               </div>
               <div className="flex">
@@ -168,7 +179,6 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
         </Formik>
         <ToastContainer />
       </div>
-      <PreviewComponent />
     </div>
   )
 }

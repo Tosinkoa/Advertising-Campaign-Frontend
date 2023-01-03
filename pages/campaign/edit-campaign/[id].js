@@ -1,4 +1,4 @@
-import FormHeader from "@/components/--Utils/FormHeader"
+import Header from "@/components/--Utils/Header"
 import CampaignForm from "@/components/Campaigns/CampaignForm"
 import Layout from "@/components/Helper/Layout"
 import CampaignEditFormSkeleton from "@/components/LoadingSkeleton/CampaignEditFormSkeleton"
@@ -25,7 +25,7 @@ const NewCampaign = () => {
 
   return (
     <Layout>
-      <FormHeader headerText="EDIT CAMPAIGN" />
+      <Header headerText="EDIT CAMPAIGN" />
       {campaignDataIsLoading && <CampaignEditFormSkeleton />}
       {!campaignDataIsLoading && (
         <CampaignForm theCampaign={theCampaign} campaignId={id} formId="edit-campaign" newCampaign={false} />

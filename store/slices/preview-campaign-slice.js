@@ -19,6 +19,7 @@ const previewCampaignSlice = createSlice({
       state.previewCampaign = action.payload
     },
     previewCampaignDataFunction: (state, action) => {
+      console.log("SHOWN")
       state.previewCampaignData = action.payload
     },
   },

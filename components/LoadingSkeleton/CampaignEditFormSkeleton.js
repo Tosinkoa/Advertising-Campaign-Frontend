@@ -1,8 +1,8 @@
 const CampaignEditFormSkeleton = () => {
   return (
     <div className="pb-10 relative ">
-      <div className="grid lg:grid-cols-2 space-y-8 lg:space-y-0 items-center animate-pulse transition-all duration-500">
-        <div className="h-80 relative rounded-md border flex items-center mx-auto place-content-center  bg-gray-300  flex-col font-bold w-11/12 md:w-80 " />
+      <div className="campaign_edit_skeleton">
+        <div className="campaign_edit_skeleton_bg " />
         <div>
           <div className=" flex flex-col  gap-y-3 md:w-9/12 lg:mr-auto w-11/12 mx-auto">
             <div className=" rounded-sm w-full bg-gray-300 h-12" />

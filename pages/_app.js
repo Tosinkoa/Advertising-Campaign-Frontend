@@ -11,7 +11,6 @@ export default function App({ Component, pageProps, router }) {
     Aos.init({
       easing: "ease-in-out-sine",
       once: false,
-      offset: 20,
       duration: 600,
     })
   }, [])

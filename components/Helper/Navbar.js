@@ -1,27 +1,22 @@
-import { AiOutlineHome } from "react-icons/ai"
-import { TiThMenu } from "react-icons/ti"
-import { useRouter } from "next/router"
 import Link from "next/link"
-import { MdWbSunny } from "react-icons/md"
-import { BsMoonStarsFill } from "react-icons/bs"
-import { useEffect, useState } from "react"
+import { Rubik_Vinyl } from "@next/font/google"
+
+const rubikVinyl = Rubik_Vinyl({ subsets: ["latin"], weight: ["400"] })
 
 const Navbar = () => {
   return (
-    <div className="fixed text-white z-20 ">
-      <div className="flex w-full mx-auto px-2 lg:px-8">
-        <div className="fixed z-10 inline-flex items-center justify-between h-[8vh] lg:h-[9vh] top-0  bg-black bg-opacity-30  w-full left-0  md:py-4 py-3  sm:px-5 md:px-10 lg:px-24 backdrop-blur-sm ">
+    <div className="navbar_bg">
+      <div className="navbar_second_bg">
+        <div className="navbar_third_bg">
           <Link href="/">
-            <h1 className=" font-cursive-marker blur-0  flex flex-1  items-center justify-center sm:justify-start text-2xl lg:text-4xl">
-              AC
-            </h1>
+            <h1 className={`${rubikVinyl.className} navbar_logo`}>AC</h1>
           </Link>
-          <div className="items-center lg:text-lg space-x-3 md:text-base md:space-x-4 text-sm font-semi-bold transition-all ">
+          <div className="navbar_buttons_bg ">
             <Link href="/campaign/new-campaign">
-              <button className="hover:border-b wordSpacing">Create Campaign</button>
+              <button className="navbar_buttons">Create Campaign</button>
             </Link>
             <Link href="/campaign">
-              <button className="hover:border-b wordSpacing">View Campaigns</button>
+              <button className="navbar_buttons">View Campaigns</button>
             </Link>
           </div>
         </div>

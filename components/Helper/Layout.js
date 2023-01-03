@@ -1,8 +1,15 @@
 import Head from "next/head"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
+import { Open_Sans } from "@next/font/google"
+import PreviewComponent from "../Campaigns/PreviewComponent"
+import { useSelector } from "react-redux"
+
+const opensans = Open_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] })
 
 const Layout = ({ title, keywords, description, children }) => {
+  const showPreviewCard = useSelector((state) => state.previewCampaign.previewCampaign)
+
   return (
     <>
       <Head>
@@ -12,8 +19,9 @@ const Layout = ({ title, keywords, description, children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="text-gray-800 font-open-san min-h-screen  overflow-hidden bottom-0 relative">
+      <div className={`${opensans.className} layout_bg`}>
         <Navbar />
+        {showPreviewCard && <PreviewComponent />}
         {children}
         <Footer />
       </div>

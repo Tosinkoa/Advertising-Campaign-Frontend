@@ -11,6 +11,7 @@ const NoCampaignMessage = () => {
           layout="fill"
           objectFit="cover"
           className="rounded-2xl"
+          unoptimized={true}
         />
       </div>
       <p className="no_campaign_message_text">

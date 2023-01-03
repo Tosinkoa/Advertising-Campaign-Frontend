@@ -1,7 +1,7 @@
 import { useField } from "formik"
 
 export default function MyInput({ label, type, labelClassName, ...props }) {
-  const [field, meta, helpers] = useField(props)
+  const [field, meta] = useField(props)
   return (
     <>
       <label className={`${labelClassName ? labelClassName : "mylabel"}`}>{label}</label>

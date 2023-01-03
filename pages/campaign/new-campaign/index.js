@@ -1,6 +1,6 @@
 import CampaignForm from "@/components/Campaigns/CampaignForm"
 import Layout from "@/components/Helper/Layout"
-import FormHeader from "@/components/--Utils/FormHeader"
+import Header from "@/components/--Utils/Header"
 
 const NewCampaign = () => {
   const theCampaign = {
@@ -14,7 +14,7 @@ const NewCampaign = () => {
 
   return (
     <Layout>
-      <FormHeader headerText="NEW CAMPAIGN" />
+      <Header headerText="NEW CAMPAIGN" />
       <CampaignForm theCampaign={theCampaign} formId="new-campaign" />
     </Layout>
   )
