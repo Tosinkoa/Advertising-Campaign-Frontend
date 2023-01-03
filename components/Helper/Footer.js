@@ -49,7 +49,6 @@ const Footer = () => {
               <FaTwitter className="footer_twitter" />
             </Link>
           </div>
-
           <div className="footer_year">
             <span>@{dayjs().year()}</span>
             <span>Ad Camp</span>
