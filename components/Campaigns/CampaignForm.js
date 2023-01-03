@@ -111,17 +111,17 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
                 placeholder="Name Of Campaign?"
                 label="Name"
               />
-              <div className="flex justify-between w-fit ">
-                <div className="flex-col mr-2 ">
+              <div className="flex w-11/12 ">
+                <div className="flex-col mr-2 w-full">
                   <MyInput
-                    className=" campaign_form_form_input "
+                    className="campaign_form_form_input "
                     type="date"
                     placeholder="mm/dd/yyy"
                     name="from_date"
                     label="From"
                   />
                 </div>
-                <div className="flex-col ml-2">
+                <div className="flex-col ml-2 w-full">
                   <MyInput
                     className="campaign_form_form_input "
                     type="date"
@@ -131,8 +131,8 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
                   />
                 </div>
               </div>
-              <div className="flex">
-                <div className="mr-2 flex flex-col relative">
+              <div className="flex w-11/12">
+                <div className="mr-2 flex flex-col relative w-full">
                   <p className="campaign_form_dollar">$</p>
                   <MyInput
                     className="campaign_form_form_input pl-5"
@@ -143,7 +143,7 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
                     placeholder="00.00"
                   />
                 </div>
-                <div className="mr-2 flex flex-col relative">
+                <div className="ml-2 flex flex-col relative w-full">
                   <p className="campaign_form_dollar">$</p>
                   <MyInput
                     className="campaign_form_form_input pl-5"
