@@ -1,7 +1,4 @@
 import Link from "next/link"
-import { Rubik_Vinyl } from "@next/font/google"
-
-const rubikVinyl = Rubik_Vinyl({ subsets: ["latin"], weight: ["400"] })
 
 const Navbar = () => {
   return (
@@ -9,7 +6,7 @@ const Navbar = () => {
       <div className="navbar_second_bg">
         <div className="navbar_third_bg">
           <Link href="/">
-            <h1 className={`${rubikVinyl.className} navbar_logo`}>AC</h1>
+            <h1 className="navbar_logo">AC</h1>
           </Link>
           <div className="navbar_buttons_bg ">
             <Link href="/campaign/new-campaign">

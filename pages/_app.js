@@ -5,6 +5,15 @@ import { Provider } from "react-redux"
 import Aos from "aos"
 import "aos/dist/aos.css"
 import { useEffect } from "react"
+import { Open_Sans, Rubik_Vinyl } from "@next/font/google"
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-openSans",
+})
+
+const rubikVinyl = Rubik_Vinyl({ subsets: ["latin"], weight: ["400"], variable: "--font-rubikVinyl" })
 
 export default function App({ Component, pageProps, router }) {
   useEffect(() => {
@@ -34,7 +43,9 @@ export default function App({ Component, pageProps, router }) {
       }}
     >
       <Provider store={store}>
-        <Component {...pageProps} />
+        <main className={`${openSans.variable} ${rubikVinyl.variable} `}>
+          <Component {...pageProps} />
+        </main>
       </Provider>
     </motion.div>
   )

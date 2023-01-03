@@ -1,8 +1,5 @@
 import Image from "next/legacy/image"
 import Typewriter from "typewriter-effect"
-import { Rubik_Vinyl } from "@next/font/google"
-
-const rubikVinyl = Rubik_Vinyl({ subsets: ["latin"], weight: ["400"] })
 
 const Banner = () => {
   return (
@@ -17,7 +14,7 @@ const Banner = () => {
       />
       <div className="banner_text_bg ">
         <p className="banner_text_head">Enjoy the opportunities </p>
-        <h1 className={`${rubikVinyl.className} banner_header`}>Advertisment Campaign</h1>
+        <h1 className="banner_header">Advertisment Campaign</h1>
 
         <Typewriter
           options={{
