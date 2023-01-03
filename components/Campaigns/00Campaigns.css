@@ -67,7 +67,7 @@
 }
 /*------------------------- PreviewComponent -------------------------*/
 .preview_component_bg {
-  @apply fixed top-0 left-0 right-0 bottom-0 z-20 h-[90vh] md:h-[80vh] md:w-8/12 bg-gray-50 my-auto w-11/12 rounded-md mx-auto;
+  @apply fixed top-0 left-0 right-0 bottom-0 z-20 h-[70vh] md:h-[80vh] md:w-8/12 bg-gray-50 my-auto w-11/12 rounded-md mx-auto;
 }
 .preview_component_overlay {
   @apply bg-black opacity-60 select-none top-0 bottom-0 w-full min-h-screen inset-0 absolute z-20;
