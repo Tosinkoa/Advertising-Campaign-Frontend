@@ -1,16 +1,13 @@
 import { FaFacebook, FaTwitter } from "react-icons/fa"
 import Link from "next/link"
 import dayjs from "dayjs"
-import { Rubik_Vinyl } from "@next/font/google"
-
-const rubikVinyl = Rubik_Vinyl({ subsets: ["latin"], weight: ["400"] })
 
 const Footer = () => {
   return (
     <div className="footer_first_bg">
       <div className="footer_second_bg">
         <div className="footer_grid">
-          <div className={`${rubikVinyl.className} footer_logo_bg`}>
+          <div className="footer_logo_bg">
             <Link href="/">
               <h1>AC</h1>
             </Link>

@@ -20,11 +20,7 @@ const Campaigns = () => {
       <Header dontShowBackButton={true} headerText="ALL CAMPAIGN" />
       {!allCampaignData && allCampaignDataIsFetching && !allCampaignDataSuccess && <AllCampaignSkeleton />}
       {!allCampaignDataIsLoading && allCampaignDataError && <NoCampaignMessage />}
-      {!allCampaignDataIsFetching && !allCampaignDataError && (
-        <div data-aos="fade-up" data-aos-delay="200">
-          <AllCampaignData allCampaignData={allCampaignData} />
-        </div>
-      )}
+      {!allCampaignDataIsFetching && !allCampaignDataError && <AllCampaignData allCampaignData={allCampaignData} />}
     </Layout>
   )
 }
