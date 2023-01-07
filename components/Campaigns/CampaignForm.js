@@ -140,7 +140,7 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
                     step="0.1"
                     name="total_budget"
                     label="Total Budget"
-                    placeholder="00.00"
+                    placeholder="00.0"
                   />
                 </div>
                 <div className="ml-2 flex flex-col relative w-full">
@@ -151,7 +151,7 @@ const CampaignForm = ({ theCampaign, formId, campaignId, newCampaign = true }) =
                     step="0.1"
                     name="daily_budget"
                     label="Daily Budget"
-                    placeholder="00.00"
+                    placeholder="00.0"
                   />
                 </div>
               </div>
