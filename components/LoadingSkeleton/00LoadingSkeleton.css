@@ -9,7 +9,7 @@
 .all_campaign_skeleton_items {
   @apply w-full h-60 rounded-md relative bg-gray-300;
 }
-/*------------------------- CampaignEditFormSkeleton -------------------------*/
+/*------------------------- CampaignEditFormSkeleton -----------------------*/
 .campaign_edit_skeleton {
   @apply grid lg:grid-cols-2 space-y-8 lg:space-y-0 items-center animate-pulse transition-all duration-500;
 }
