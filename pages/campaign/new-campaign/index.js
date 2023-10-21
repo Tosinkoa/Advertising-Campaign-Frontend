@@ -1,6 +1,6 @@
-import CampaignForm from "@/components/Campaigns/CampaignForm"
-import Layout from "@/components/Helper/Layout"
-import Header from "@/components/--Utils/Header"
+import CampaignForm from "@/components/Campaigns/CampaignForm";
+import Header from "@/components/01Utils/Header";
+import WebsiteMetadata from "@/components/00WebsiteMetaData/WebsiteMetadata";
 
 const NewCampaign = () => {
   const theCampaign = {
@@ -10,14 +10,14 @@ const NewCampaign = () => {
     total_budget: "",
     daily_budget: "",
     creative_upload: "",
-  }
+  };
 
   return (
-    <Layout>
+    <WebsiteMetadata>
       <Header headerText="NEW CAMPAIGN" />
       <CampaignForm theCampaign={theCampaign} formId="new-campaign" />
-    </Layout>
-  )
-}
+    </WebsiteMetadata>
+  );
+};
 
-export default NewCampaign
+export default NewCampaign;

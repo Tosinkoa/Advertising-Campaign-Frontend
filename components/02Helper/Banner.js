@@ -1,5 +1,5 @@
-import Image from "next/legacy/image"
-import Typewriter from "typewriter-effect"
+import Image from "next/legacy/image";
+import Typewriter from "typewriter-effect";
 
 const Banner = () => {
   return (
@@ -27,7 +27,7 @@ const Banner = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

@@ -20,7 +20,7 @@
   @apply row-start-2 md:col-start-1 md:row-start-1 px-8 text-center space-y-3 lg:w-3/4 w-4/5 mx-auto flex flex-col font-semibold;
 }
 .grid_header_text {
-  @apply font-bold text-3xl md:text-5xl;
+  @apply font-bold text-gray-700 text-3xl md:text-5xl;
 }
 .left_right_pic_bg {
   @apply px-8 row-start-1 md:col-start-2 -mt-28 md:mt-0;
@@ -44,5 +44,9 @@
 }
 /*------------------------- Formik -------------------------*/
 .mylabel {
-  @apply font-bold mb-1;
+  @apply font-semibold text-gray-700;
+}
+
+.input_error {
+  @apply text-primary-600 h-6;
 }

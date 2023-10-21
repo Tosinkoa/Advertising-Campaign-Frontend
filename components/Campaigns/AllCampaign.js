@@ -1,12 +1,12 @@
-import Image from "next/legacy/image"
-import Link from "next/link"
-import { BsPencilFill } from "react-icons/bs"
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { MdDelete } from "react-icons/md"
-import { useDeleteCampaignMutation } from "@/store/APIs/campaignApi"
-import dayjs from "dayjs"
-import { previewCampaignActions } from "@/store/slices/preview-campaign-slice"
+import Image from "next/legacy/image";
+import Link from "next/link";
+import { BsPencilFill } from "react-icons/bs";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { MdDelete } from "react-icons/md";
+import { useDeleteCampaignMutation } from "@/store/APIs/campaignApi";
+import dayjs from "dayjs";
+import { previewCampaignActions } from "@/store/slices/preview-campaign-slice";
 
 const AllCampaignData = ({ allCampaignData }) => {
   return (
@@ -25,16 +25,24 @@ const AllCampaignData = ({ allCampaignData }) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-const AllCampaign = ({ id, name, from_date, to_date, total_budget, daily_budget, creative_upload }) => {
-  const dispatch = useDispatch()
-  const [showEditAndDeleteButton, setShowEditAndDeleteButton] = useState(false)
-  const [deleteCampaign] = useDeleteCampaignMutation()
+const AllCampaign = ({
+  id,
+  name,
+  from_date,
+  to_date,
+  total_budget,
+  daily_budget,
+  creative_upload,
+}) => {
+  const dispatch = useDispatch();
+  const [showEditAndDeleteButton, setShowEditAndDeleteButton] = useState(false);
+  const [deleteCampaign] = useDeleteCampaignMutation();
 
   const showClickedCampaignDetails = (e) => {
-    if (parseInt(e.target.id) !== id) return
+    if (parseInt(e.target.id) !== id) return;
     dispatch(
       previewCampaignActions.previewCampaignDataFunction({
         creative_upload,
@@ -44,9 +52,9 @@ const AllCampaign = ({ id, name, from_date, to_date, total_budget, daily_budget,
         from_date,
         to_date,
       })
-    )
-    dispatch(previewCampaignActions.previewCampaignFunction(true))
-  }
+    );
+    dispatch(previewCampaignActions.previewCampaignFunction(true));
+  };
   return (
     <div key={id}>
       <div
@@ -55,7 +63,11 @@ const AllCampaign = ({ id, name, from_date, to_date, total_budget, daily_budget,
         onMouseLeave={() => setShowEditAndDeleteButton(false)}
       >
         <div>
-          <div className="all_campaign_overlay" id={id} onClick={showClickedCampaignDetails}></div>
+          <div
+            className="all_campaign_overlay"
+            id={id}
+            onClick={showClickedCampaignDetails}
+          ></div>
           {showEditAndDeleteButton && (
             <div className=" all_campaign_icons_bg ">
               <MdDelete onClick={async () => await deleteCampaign({ campaignId: id })} />
@@ -77,18 +89,20 @@ const AllCampaign = ({ id, name, from_date, to_date, total_budget, daily_budget,
               {name}
             </p>
             <div className="all_campaign_details">
-              <div>From: {dayjs(from_date).format("MMM D, YYYY")}</div>
-              <div>To: {dayjs(to_date).format("MMM D, YYYY")}</div>
-              <div className="all_campaign_budget">
-                <p>Total Budget: ${total_budget}</p>
-                <p>Daily Budget: ${daily_budget}</p>
+              <div>
+                <span className="detail_title">From:</span>
+                <span> {dayjs(from_date).format("MMM D, YYYY")}</span>
+              </div>
+              <div>
+                <span className="detail_title">To:</span>{" "}
+                {dayjs(to_date).format("MMM D, YYYY")}
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AllCampaignData
+export default AllCampaignData;

@@ -1,14 +1,14 @@
-import Grid from "@/components/--Utils/Grid"
-import Banner from "../components/Helper/Banner"
-import Layout from "../components/Helper/Layout"
+import Grid from "@/components/01Utils/Grid";
+import WebsiteMetadata from "@/components/00WebsiteMetaData/WebsiteMetadata";
+import Banner from "@/components/02Helper/Banner";
 
 const Home = () => {
   return (
-    <Layout>
+    <WebsiteMetadata>
       <Banner />
       <Grid />
-    </Layout>
-  )
-}
+    </WebsiteMetadata>
+  );
+};
 
-export default Home
+export default Home;
